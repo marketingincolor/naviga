@@ -1,16 +1,18 @@
 <?php
 // define some vars
+require_once '../wp-config.php';
 if ( defined( 'ABSPATH' ) )
     $abspath = ABSPATH;
 else
-    $abspath = 'http://dev.marketingincolor.com/wptest';
+    //$abspath = 'http://dev.marketingincolor.com/wptest';
+    $abspath = '/home/mic/public_html/dev/wptest';
 
 /*
  * define the role of the new user here
  * @see http://codex.wordpress.org/Roles_and_Capabilities
  */
 $role = 'subscriber';
-
+echo $abspath;
 /*
  * fetch post data
  */
