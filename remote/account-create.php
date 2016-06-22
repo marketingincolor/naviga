@@ -4,20 +4,19 @@ require_once '../wp-config.php';
 if ( defined( 'ABSPATH' ) )
     $abspath = ABSPATH;
 else
-    //$abspath = 'http://dev.marketingincolor.com/wptest';
-    $abspath = '/home/mic/public_html/dev/wptest';
+    $abspath = 'http://dev.marketingincolor.com/wptest';
+    //$abspath = '/home/mic/public_html/dev/wptest';
 
 /*
  * define the role of the new user here
  * @see http://codex.wordpress.org/Roles_and_Capabilities
  */
 $role = 'subscriber';
-echo $abspath;
+$form_email = 'Email';
 /*
  * fetch post data
  */
-$user_email = ( isset( $_POST['email'] ) && ! empty( $_POST['email'] ) ) ?
-    filter_input( INPUT_POST, 'email', FILTER_SANITIZE_EMAIL ) : '';
+$user_email = ( isset( $_POST[$form_email] ) && ! empty( $_POST[$form_email] ) ) ?  $_POST[$form_email] : '';
 
 // no email, no registration!
 if ( empty( $user_email ) ) {
