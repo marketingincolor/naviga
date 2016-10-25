@@ -4,7 +4,7 @@ wp-content/upgrade/
 wp-content/backup-db/
 wp-content/advanced-cache.php
 wp-content/wp-cache-config.php
-wp-content/themes/madico.com-Dealer
+#wp-content/themes/madico.com-Dealer
 sitemap.xml
 *.log
 wp-content/cache/

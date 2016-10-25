@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+#history-timeline {
+	padding-top: 30px;		
+}
+
+#timeline-events .madico {
+	margin-bottom: -16px!important;
+}
+.scroll-bar-wrap .ui-slider-handle .ui-icon {
+	margin-top: -11px;
+}

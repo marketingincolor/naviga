@@ -1,0 +1,86 @@
+/*/// CUSTOM FIELD TEMPLATE CSS CODE ///*/
+#wpbody #cft {
+	width:650px;
+	margin: 0 auto;
+}
+#wpbody #cftdiv .inside #cft .button {
+	display: block;
+}
+#wpbody #cft_selectbox {
+	margin-bottom: 1em;
+}
+#wpbody #cft fieldset {
+	background: #FAFAFA;
+	border: 1px solid #AAA;
+	margin:0 10px 20px 0 !important;
+	width:300px;
+	display: inline;
+	vertical-align: top;
+}
+#wpbody #cft fieldset legend {
+	font-size: 13px;
+	background: #FDFDFD;
+	padding: 6px 12px;
+	-webkit-box-shadow: 2px 2px 5px  #5e5e5e;
+	-moz-box-shadow: 2px 2px 5px #5e5e5e;
+	box-shadow: 2px 2px 5px #5e5e5e; 
+}
+#wpbody #cft fieldset textarea {
+	height:82px;
+	width:100%;
+}
+#wpbody #cft fieldset legend span a {
+	font-weight: bold;
+	color: #FF0043;
+	text-decoration: none;
+	font-size: 14px;
+	display: block;
+	padding: 8px 0;
+}
+#wpbody #cft fieldset input {
+	max-width:280px;
+}
+#wpbody #cft dd {
+	margin-left: 0;
+}
+#wpbody #cft input {
+	margin-bottom: 10px;
+}
+#wpbody #cft label {
+	margin-right: 10px;
+}
+img.sticky-note {
+	display: none;
+}
+.verve_meta_box_content label {
+	cursor: text;
+	font-weight: bold;
+	margin-top: 18px;
+	font-size: 14px;
+}
+.verve_meta_checkbox li {
+	font-size: 11px;
+}
+.verve_meta_box_content textarea, .verve_meta_box_content input[type="text"] {
+	width:100%;
+	margin-top: 4px;
+}
+.verve_meta_box_content textarea {
+	height: 150px;
+}
+.wp-post-thumbnail {
+	font-weight: bold;
+	font-size: 20px;
+	color: #FF6600;
+	text-decoration:none;
+}
+#wpbody #cft .slideshowsetting, #wpbody #cft .customheader {
+	display: none;
+}
+#wpbody #cft .slideshowsetting {
+	width:45%;
+	margin-right: 5%;
+}
+#side-sortables .inside select {
+	width:100%;
+}

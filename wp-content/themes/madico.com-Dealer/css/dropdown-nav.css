@@ -1,0 +1,168 @@
+/*// Z-index */
+#header, #navigation, #main-nav {
+	z-index: 10;
+}
+#main-nav li ul, #main-nav li ul li {
+	z-index: 99;
+}
+#content {
+	z-index: 5;
+}
+
+/* Dropdowns */
+#navigation ul {
+	margin:0;
+}
+/* 1st level */
+#navigation li {
+	float:left;
+	margin:0;
+	padding:0;
+}
+#navigation li a {
+	background:#666;
+	color:#fff;
+	padding:9px 12px 5px 12px;
+	text-align:center;
+	margin:0 2px 0 0;
+	display:block;
+	font-weight:bold;
+	text-decoration:none;
+	-moz-border-radius-topleft: 3px;
+	-webkit-border-top-left-radius: 3px;
+	-moz-border-radius-topright: 3px;
+	-webkit-border-top-right-radius: 3px;
+}
+#navigation li a:hover, 
+#navigation li a:active, 
+#navigation li:hover a, 
+#navigation li:active a {
+	background:#0072BC;
+	color:#FFF;
+}
+#navigation li.current_page_item a,
+#navigation li.current_page_parent a,
+#navigation li.current_page_ancestor a {
+	background:#fff;
+	color:#333;
+}
+/* 2nd level */
+#navigation li ul {
+	padding:0;
+	background:#0072BC;
+}
+#navigation li li a,
+#navigation li.current_page_parent li a,
+#navigation li.current_page_item li a,
+#navigation li.current_page_ancestor li a {
+	margin:0;
+	text-align:left;
+	background:#0072BC;
+	color:#fff;
+	font-size:12px;
+	padding:7px 10px 5px 10px;
+	line-height:1.3em;
+	-moz-border-radius-topleft: 0;
+	-webkit-border-top-left-radius: 0;
+	-moz-border-radius-topright: 0;
+	-webkit-border-top-right-radius: 0;
+}
+#navigation li li a:hover, 
+#navigation li li a:active, 
+#navigation li li:hover a, 
+#navigation li li:active a, 
+#navigation li li.current_page_item a,
+#navigation li li.current_page_parent a,
+#navigation li li.current_page_ancestor a {
+	background:#CFD9E8;
+	color:#333;
+}
+#navigation li li {
+	font-size:12px;
+	margin-left:0;
+	width:200px;
+	float:none;
+	display:block;
+	background:#0072BC;
+}
+#navigation ul li ul li a {
+	color:#FFF;
+	border-right:0 none;
+	display:block;
+}
+#navigation ul li ul {
+	position:absolute;
+	margin-left:-9999px;
+	width:200px;
+}
+#navigation ul li ul.jquery, #navigation ul li:hover ul {
+	margin-left:0 !important;
+	z-index: 99;
+}
+#navigation li li a {
+	display:block;
+}
+#navigation li li:hover, #navigation li:active li {
+	background:#0072BC;
+}
+#navigation li ul li a {
+	font-size:11px;
+}
+
+/* 2nd level current section */
+#navigation li.current_page_item li a,
+#navigation li.current_page_parent li a,
+#navigation li.current_page_ancestor li a {
+	margin:0;
+	text-align:left;
+	background:#0072BC;
+	color:#fff;
+	font-size:12px;
+	padding:5px 10px 3px 10px;
+	line-height:1.3em;
+	-moz-border-radius-topleft: 0;
+	-webkit-border-top-left-radius: 0;
+	-moz-border-radius-topright: 0;
+	-webkit-border-top-right-radius: 0;
+}
+body.hasSubNav #content {
+	margin-top:50px;
+}
+body #header #navigation li.current_page_item ul,
+body #header #navigation li.current_page_parent ul,
+body #header #navigation li.current_page_ancestor ul {
+	padding:0;
+	width:100%;
+	margin:0;
+	background:#ccc;
+	left: 0;
+	z-index: 90;
+}
+body #header #navigation li.current_page_item ul li,
+body #header #navigation li.current_page_parent ul li,
+body #header #navigation li.current_page_ancestor ul li {
+	float:left;
+	width:auto;
+	background:none;
+}
+body #header #navigation li.current_page_item ul li a,
+body #header #navigation li.current_page_parent ul li a,
+body #header #navigation li.current_page_ancestor ul li a {
+	padding:8px 12px 4px 12px;
+	border-right:1px solid #fff;
+	background:none;
+	color:#0072BC;
+}
+body #header #navigation li.current_page_item ul li a:hover,
+body #header #navigation li.current_page_parent ul li a:hover,
+body #header #navigation li.current_page_ancestor ul li a:hover {
+	color:#62B54B;
+}
+body #header #navigation li.current_page_item ul li a:active,
+body #header #navigation li.current_page_parent ul li a:active,
+body #header #navigation li.current_page_ancestor ul li a:active,
+body #wrapper #header #navigation li ul li.current_page_item a,
+body #wrapper #header #navigation li ul li.current_page_parent a,
+body #wrapper #header #navigation li ul li.current_page_ancestor a {
+	color:#333;
+}

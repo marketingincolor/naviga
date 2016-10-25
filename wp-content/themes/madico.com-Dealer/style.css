@@ -1,0 +1,60 @@
+/*
+Theme Name: Madico.com Dealer Directory
+Theme URL: http://www.madico.com
+Description: A custom theme created exclusively for Madico.
+Author: Kevin Leary & Fresh Tilled Soil, (Revised and mobilized by MarketingInColor)
+Author URI: http://www.freshtilledsoil.com
+Version: 1.21
+*/
+
+/* CSS Reset */
+/*@import 'css/reset.css';*/
+@import 'css/forms.css';
+@import 'css/style.css';/* misc. overrides for theme and Bootstrap [MIC 07/29/16] */
+.main a:link, .main a:visited { color: #00467f; text-decoration: underline; }
+.splash .full { height:100%; width:100%; padding:0; background: rgba(0, 0, 0, 0) none repeat scroll 0 0; }
+.splash .full a { height:100%; width:100%; position:relative; display:block; z-index:10; }
+/*body.home #columns .col { width:280px; text-align:center; }
+body.home #columns .text { text-align: center; }*/
+.container {max-width: 940px !important; }
+/*.tagline { left: 196px; }*/
+
+/* Media Query Customizations [MIC 07/29/16] */
+/* Large desktop */
+@media (min-width: 1200px) {
+    #home-form { height:650px; }/* @TODO: heights should be set to max- once form in place for all formats*/
+    .headline { padding-bottom:0; }
+    .footer-menu li { border-left: 1px solid #ffffff; }
+}
+/* desktop */
+@media (min-width: 780px) and (max-width: 1199px) {
+    #home-form { height:650px; }/* @TODO: heights should be set to max- once form in place for all formats*/
+    .headline { padding-bottom:0; }
+    .footer-menu li { border-left: 1px solid #ffffff; }
+}
+/*
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+    .headline { padding-bottom:0; }
+    .footer-menu li { border-left: 1px solid #ffffff; }
+    .branding { text-align:inherit; }
+    #home-form { height:650px; }/* @TODO: heights should be set to max- once form in place for all formats*/
+}
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+    .headline { padding-bottom:0; }
+    .footer-menu li { width:100%; display: block !important; margin-bottom:10px !important; }
+    .branding { text-align:center; }
+    .branding .pipe { font-size:36px; }
+    .branding .htext { font-size:16px; font-weight:bold; }
+    #home-form { height:520px }/* @TODO: heights should be set to max- once form in place for all formats*/
+}
+/* Landscape phones and down */
+@media (max-width: 480px) {
+    .headline { padding-bottom:0; }
+    .footer-menu li { width:100%; display: block !important; margin-bottom:10px !important; }
+    .branding { text-align:center; }
+    .branding .pipe { font-size:36px; }
+    .branding .htext { font-size:16px; font-weight:bold; }
+    #home-form { height:520px; }/* @TODO: heights should be set to max- once form in place for all formats*/
+}

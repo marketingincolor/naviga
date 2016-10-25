@@ -1,0 +1,14 @@
+.metabox-class-container{padding:10px;}.metabox-class-container .field{margin:10px 0 0;}.metabox-class-container .field:first-child{margin-top:5px;}
+.metabox-class-container .description{line-height:1.5em;font-style:normal;}
+.metabox-class-container p{margin:5px 0 10px !important;}
+.metabox-class-container h4{color:#999;font-size:1em;margin:20px 6px 10px;line-height:1.3em;text-transform:uppercase;letter-spacing:1px;}.metabox-class-container h4:first-child{margin-top:6px;}
+.metabox-class-container label{display:block;font-weight:700;margin:0;line-height:1.3em;font-size:12px;}
+.metabox-class-container label span{display:inline;font-weight:400;}
+.metabox-class-container span{color:#999;display:block;}.metabox-class-container span.checkbox{display:inline-block;margin:0 0 5px;}.metabox-class-container span.checkbox input{margin-right:4px;}
+.metabox-class-container span.checkbox.alert{padding:5px 10px 5px 7px;background:#FFBBBE;border:1px solid #ff888c;color:#ff0000;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;}
+.metabox-class-container span.reminder{display:inline;color:#FF0000;margin:0 0 0 10px;font-size:13px;}
+.metabox-class-container textarea,.metabox-class-container input[type='text']{margin:0 0 3px;width:99%;color:#777;line-height:1.4em;font-size:12px;}
+.metabox-class-container .group-entry{background:#EAF2FA;-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;border:1px solid rgba(0, 0, 0, 0.05);padding:4px 8px 12px;margin:5px 0 15px;}.metabox-class-container .group-entry .button-primary{margin-top:4px;}
+.metabox-class-container .group-entry .upload input[type="text"]{width:86.5%;}
+.metabox-class-container a.button,.metabox-class-container a.button-primary{display:inline-block;}
+.metabox-class-container .add-field{margin-bottom:4px !important;}

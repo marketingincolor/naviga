@@ -1,0 +1,38 @@
+/* Forms */
+textarea, input { padding: .15em .4em .25em .4em; }
+select { padding: .1em 0 0 .2em; }
+option { padding: 0 .4em; }
+span.required {
+	font-size:15px;
+	font-weight:bold;
+	color:red;
+}
+input[type="submit"], 
+input.submit, 
+input[type="submit"]:visited, 
+input.submit:visited {
+	background: #222 url(../images/alert-overlay.png) repeat-x; 
+	display: inline-block; 
+	padding: 5px 10px 6px; 
+	border:none;
+	color: #fff; 
+	text-decoration: none;
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px;
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	position: relative;
+	cursor: pointer;
+}
+input[type="submit"]:hover, 
+input.submit:hover { 
+	background-color: #111; 
+	color: #fff; 
+}
+input[type="submit"]:active,
+input.submit:active { 
+	top: 1px;
+	outline:none;
+}

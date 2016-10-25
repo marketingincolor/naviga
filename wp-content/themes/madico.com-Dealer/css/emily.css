@@ -1,0 +1,107 @@
+/****************************************
+Merge this file with style.css before 1/17/11
+****************************************/
+
+/***Contact page intro section styles***/
+div.main p.contact-intro {
+	float: left;
+	width: 45%;
+	margin: 10px 20px 20px 0;	
+}
+div.main ul.contact-info {
+	float: left;
+	margin: 0 0 0 20px;
+	list-style-type: none;	
+}
+
+div.main ul.contact-info li {
+	margin: 10px 0 0 0;
+	padding: 0 0 10px 0;
+	border-bottom: 1px solid #dce1d4;
+}
+div.main ul.contact-info li span {
+	display: inline-block;
+	width: 80px;	
+}
+.gform_wrapper {
+	clear: both;	
+}
+
+
+/***Case Study Page***/
+#content div.page .casestudy#columns div.main h1 {
+	margin: 0 0 5px;	
+}
+.casestudy span.prev-next {
+	display: block;
+	float: right;
+	margin: 12px 0 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	text-transform: uppercase;	
+}
+.casestudy span.prev-next a {
+	text-decoration: none;
+	color: #0f4a7a;	
+}
+.casestudy span.prev-next a.next {
+	padding: 0 0 0 8px;
+	margin: 0 0 0 8px;
+	border-left: 1px dotted #d8d5cd;	
+}
+.casestudy h4.casestudy-title {
+	padding: 10px 0 0 0;
+	font-size: 14px;
+	border-top: 1px dotted #d8d5cd;	
+	color: #515e64;
+	font-weight: normal;	
+}
+
+.casestudy a.pdf {
+	display: block;
+	float: right;
+	margin: 8px 0 0 0;
+	padding: 4px 10px 3px 11px;
+	color: #003f72;
+	background: #f6f3ed;
+	text-decoration: none;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	box-shadow: 0px 1px 2px rgba(1, 1, 1, 0.1);
+	-moz-box-shadow: 0px 1px 2px rgba(1, 1, 1, 0.1);
+	-webkit-box-shadow: 0px 1px 2px rgba(1, 1, 1, 0.1);
+}
+.casestudy a.pdf img {
+	margin: 0px 3px 0 0;
+	padding: 0 0 2px 0;
+	vertical-align: text-bottom;	
+}
+.casestudy .gallery {
+	margin: 20px 0 15px 0;	
+	box-shadow: 0px 1px 2px rgba(1, 1, 1, 0.1);
+	-moz-box-shadow: 0px 1px 2px rgba(1, 1, 1, 0.1);
+	-webkit-box-shadow: 0px 1px 2px rgba(1, 1, 1, 0.1);
+}
+.casestudy .gallery img {
+	display: block;
+}
+.casestudy #details #testimonial {
+	float: left;
+	width: 225px;
+	padding: 0 20px 0 0;
+	margin: 0 30px 0 0;
+	border-right: 1px dotted #d8d5cd;	
+}
+.casestudy #details #testimonial h3 {
+	margin: 0 0 15px 0;
+	font-style: italic;
+	color: #003f72;	
+}
+.casestudy #details #testimonial span {
+	font-size: 11px;
+	color: #817e77;	
+}
+.casestudy #details .description {
+	color: #66625c;	
+}

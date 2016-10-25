@@ -1,0 +1,358 @@
+@charset "utf-8";
+/* CSS Document */
+
+#history-timeline {
+	clear: both;
+	margin-top:-50px;
+}
+
+
+#loading-wrapper {
+	position:absolute;
+	top:-12px;
+	left: 0;
+	z-index:300;
+	width:100%;
+	height:120%;
+	background: #f1f1f1;
+}
+#loading {
+	margin: 200px auto auto;
+	width:300px;
+	text-align:center;
+}
+#loading img {
+	margin-bottom:12px;
+}
+
+#history-timeline li {
+	list-style-type: none;
+}
+
+.label {
+	overflow:visible;
+	display:none;
+	width:300px;
+}
+.scroll-bar-wrap .ui-slider { background: none; border:0; margin: 0 auto;  }
+.scroll-bar-wrap .ui-handle-helper-parent { position: relative; width: 100%; height: 100%; margin: 0 auto; }
+.scroll-bar-wrap .ui-slider-handle { top:.2em; height: 1.5em; }
+.scroll-bar-wrap .ui-slider-handle .ui-icon { margin: -8px auto 0; position: relative; top: 50%; }
+#scroller {
+	height:8px;
+}
+#scroller a {
+	margin-top:4px;
+}
+
+#wrapper {
+	width:960px;
+	margin:64px auto 40px;
+}
+h2 {
+	font-size:16px;
+	line-height:30px;
+}
+h3 {
+	font-size:16px;
+}
+
+#header-left {
+	width:640px;
+	margin-right:20px;
+	float:left;
+}
+#header-right {
+	width:280px;
+	float:left;
+}
+#timeline-holder, #zoom-holder {
+	display:block;
+	position:relative;
+	width:920px;
+	color: #838383;
+}
+#ylabels, #timeline-box {
+	float: left;
+	display: block;
+	overflow: hidden;
+}
+#ylabels {
+	width:20px;
+	font-weight: bold;
+	font-size: 10px;
+	display: inline;
+	padding: 0;
+	height: 372px;
+	overflow: visible;
+	margin-top: -7px;
+	display: block;
+}
+#ylabels li {
+	height: 53px;
+	width: 100%;
+}
+#ylabels .tic {
+	font-weight: normal;
+	color: #ced2d4;
+}
+#timeline-box {
+	width:894px;
+	height: 372px;
+	margin-left: 4px;
+	border-top: 1px solid #d5dadc;
+	background: url(../images/timeline/stripes-bg.png) repeat top left;
+	position: relative;
+	
+     -moz-box-shadow: 0px -2px 5px #ccc inset; 
+  -webkit-box-shadow: 0px -2px 5px #ccc inset; 
+          box-shadow: 0px -2px 5px #ccc inset;
+}
+#interactive {
+	width:100%;
+	height: 100%;
+	position:absolute;
+	left:0;
+}
+#zoom-holder {
+	height:40px;
+	padding-top:6px;
+	padding-left: 36px;
+}
+#zoom-holder h2 {
+	margin-bottom:18px;
+}
+#timeline-labely {
+	background: url(../images/timeline/timeline-img.png) no-repeat top left;
+	position: absolute;
+	width:42px;
+	height: 295px;
+	z-index: 32;
+}
+#timeline {
+	display:block;
+	position: absolute;
+	z-index: 30;
+}
+.scroll-bar-wrap {
+	width:730px;
+	float: left;
+	border:1px solid #c2cdd2 !important;
+	height:6px!important;
+	margin-top:12px;
+	background: #d6e1e7;
+	
+     -moz-border-radius: 3px; 
+  -webkit-border-radius: 3px; 
+          border-radius: 3px; 
+}
+#scroller .ui-slider-handle {
+	border:1px solid #c2cdd2 !important;
+	background:#F1F1F1 !important;
+	height:12px!important;
+	top: -8px;
+	outline:none!important;
+	cursor: move;
+
+     -moz-box-shadow: 0px 0px 3px #f1f1f1; 
+  -webkit-box-shadow: 0px 0px 3px #f1f1f1; 
+          box-shadow: 0px 0px 3px #f1f1f1; 
+     -moz-border-radius: 5px; 
+  -webkit-border-radius: 5px; 
+          border-radius: 5px; 
+}
+#scroller .ui-slider-handle span {
+	background: transparent url(../images/timeline/slider-control.gif) no-repeat center center;
+}
+.ui-slider-handle.ui-state-hover {
+     -moz-box-shadow: 0px 0px 5px #BBB!important; 
+  -webkit-box-shadow: 0px 0px 5px #BBB!important; 
+          box-shadow: 0px 0px 5px #BBB!important; 
+}
+#scroller .ui-slider-handle.ui-state-active {
+     -moz-box-shadow: 0px 0px 5px #999!important; 
+  -webkit-box-shadow: 0px 0px 5px #999!important; 
+          box-shadow: 0px 0px 5px #999!important; 
+}
+.segment .label {
+	color:#f1f1f1;
+	font-weight:bold;
+}
+#timeline-events {
+	position:absolute;
+	width:100%;
+	height: 100%;
+	z-index: 60;
+}
+#timeline-events a {
+	color:#66625c;
+	text-decoration:none;
+}
+#timeline-events .event {
+	position:absolute;
+}
+#timeline-events .event.last {
+	text-align:right;
+}
+#timeline-events .event .top {
+	text-align:center;
+	display:block;
+	margin-left:2px;
+	z-index: 1000 !important;
+}
+#timeline-events .event .active {
+}
+#timeline-events .event .border {
+	position:relative;
+	width:1px;
+	border-left:1px solid #c1d1db;
+}
+
+#timeline-events .event.window .border {
+	height: 20px;
+}
+#timeline-events .event.specialty .border {
+	height: 40px;
+}
+#timeline-events .event.safety .border {
+	height: 60px;
+}
+#timeline-events .event.security .border {
+	height: 80px;
+}
+#timeline-events .event.madico {
+	margin-bottom: -12px;
+}
+#timeline-events .event.madico .border {
+	display: none;
+}
+#timeline-events .event .top {
+	position:relative;
+	left:-50%;
+	outline:none;
+}
+
+#legend {
+	font-size: 15px;
+	font-size:15px;
+	line-height:24px;
+}
+#legend .default {
+	width:690px;
+}
+#legend #types {
+	padding: 0;
+	margin-bottom: 12px;
+	display: block;
+}
+#legend #types li {
+	padding: 0;
+	margin-right: 20px;
+	float: left;
+	height: 28px;
+}
+#legend .default {
+	padding: 6px;
+	top: 12px;
+}
+#legend .default.removed {
+	display: none!important;
+}
+#legend .default, #legend .detail {
+	position: absolute;
+	z-index: 120;
+	left: 54px;
+}
+#legend .detail {
+	display:none;
+	width: 420px;
+	padding: 6px 6px 6px 65px;
+	min-height: 65px;
+}
+#legend.not-flipped .detail {
+	top: 12px;
+}
+#timeline-holder #legend.flipped .detail {
+	bottom:36px;
+	padding: 10px 10px 10px 65px;
+}
+
+#legend .detail .event-date {
+	float: left;
+	font-weight: bold;
+	margin-right: 4px;
+}
+#zoom {
+	float: left;
+	background: url(../images/timeline/zoom-bg.png) no-repeat right center;
+	width:104px;
+	margin-right: 12px;
+	float: left;
+}
+#zoom-holder .note {
+	float: left;
+	padding-top: 5px;
+	width: 35px;
+}
+#zoom .zoombtn {
+	width:32px;
+	height: 32px;
+	display: block;
+	background: transparent url(../images/timeline/zoom-btn-bg.png) no-repeat top left;
+	float: left;
+	cursor: pointer;
+}
+#zoom .zoombtn span {
+	font-weight: bold;
+	font-size: 13px;
+	color: #919da4;
+	position: relative;
+	top:6px;
+	text-align: center;
+	display: block;
+	cursor: pointer;
+}
+#zoom .zoombtn:hover span {
+	color: #8eb5c9;
+}
+#zoom .zoombtn.active {
+	background-position:bottom left;
+}
+#xlabels {
+	position: absolute;
+	z-index: 40;
+	height: 100%;
+	width: 100%;
+	display: block;
+}
+#xlabels .era {
+	width:149px;
+	float: left;
+	height: 372px;
+	background: url(../images/timeline/white-border.png) repeat-y top left;
+	position: relative;
+}
+#xlabels .era:first-child {
+	background: none;
+}
+#xlabels .xlabel {
+	position: absolute;
+	bottom:0;
+	width:100%;
+	height: 26px;
+	background: url(../images/timeline/trans.png) repeat;
+	font-size: 11px;
+	font-weight: bold;
+	color:#FFF;
+}
+#xlabels .xlabel span {
+	position: relative;
+	left:12px;
+	top:5px;
+}
+#xlabels .zoom2, #xlabels .zoom3 {
+	width:0;
+}
+
+
+

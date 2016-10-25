@@ -1,0 +1,40 @@
+#content a.full, .home a.full {
+	display: block;
+	float: right;
+	margin: 8px 0 0 0;
+	padding: 4px 10px 3px 11px;
+	color: #003f72;
+	background: #f6f3ed;
+	text-decoration: none;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	box-shadow: 0px 1px 2px rgba(1, 1, 1, 0.1);
+	-moz-box-shadow: 0px 1px 2px rgba(1, 1, 1, 0.1);
+	-webkit-box-shadow: 0px 1px 2px rgba(1, 1, 1, 0.1);
+}
+
+#content a.full:hover, .home a.full:hover {
+	background: #e7e0d1;
+}
+
+#content a.full img, .home a.full img  {
+	margin: 0px 3px 0 0;
+	padding: 0 0 2px 0;
+	vertical-align: text-bottom;	
+}
+#content a.full {
+	float:left;
+	margin-right:14px;
+}
+
+#content .casestudy-overview a.full {
+	float: none;
+	width: 80px;
+}
+
+.home a.full {
+	clear: both;
+	float: none;
+	width: 80px;
+}
