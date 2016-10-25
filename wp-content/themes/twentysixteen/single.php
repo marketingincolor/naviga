@@ -39,7 +39,6 @@ get_header(); ?>
 						'<span class="post-title">%title</span>',
 				) );
 			}
-
 			// End of the loop.
 		endwhile;
 		?>

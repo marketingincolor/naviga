@@ -4,8 +4,7 @@ require_once '../wp-config.php';
 if ( defined( 'ABSPATH' ) )
     $abspath = ABSPATH;
 else
-    $abspath = 'http://dev.marketingincolor.com/wptest';
-    //$abspath = '/home/mic/public_html/dev/wptest';
+    $abspath = '/home/mic/public_html/dev/wptest';
 
 /*
  * define the role of the new user here
@@ -17,9 +16,20 @@ $form_email = 'Email';
  * fetch post data
  */
 $user_email = ( isset( $_POST[$form_email] ) && ! empty( $_POST[$form_email] ) ) ?  $_POST[$form_email] : '';
+$branch0 = ( isset( $_POST['BranchVillages'] ) && ! empty( $_POST['BranchVillages'] ) ) ?  $_POST['BranchVillages'] : '';
+$branch1 = ( isset( $_POST['BranchOther'] ) && ! empty( $_POST['BranchOther'] ) ) ?  $_POST['BranchOther'] : '';
+$branchn = ( isset( $_POST['BranchNone'] ) && ! empty( $_POST['BranchNone'] ) ) ?  $_POST['BranchNone'] : '';
 
-// no email, no registration!
-if ( empty( $user_email ) ) {
+if ( !empty( $branch0 ) ) {
+    $branch = $branch0;
+} elseif ( !empty( $branch1 ) ) {
+    $branch = $branch1;
+} elseif ( !empty( $branchn ) ) {
+    $branch = 'None';
+}
+
+// no email, or Branch, no registration!
+if ( empty( $user_email ) || $branch == 'None' ) {
 // TODO: More error handling like an email to yourself or something else
     exit();
 }
