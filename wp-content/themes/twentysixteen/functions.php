@@ -464,52 +464,68 @@ function egw_posts_location()
  * Change Member Role To Match Tagged Location.
  * @return string Village/s location
  */
-function egw_member_location()
+function get_egw_member_location()
 {
-	$user_caps = array ( 'villages_member' );
-	$user_id = get_current_user_id();
-	$member_data = get_userdata($user_id);
-	$member_caps = $member_data->caps;
-	$found_user_roles = array();
-
-	foreach ($member_caps as $key => $caps) {
-		$found_user_roles[] = $key;
-	}
-
-	$villages_match = array_search('villages_member', $found_user_roles);
-
-	if ( $villages_match )
+	$user = wp_get_current_user();
+	if ( in_array( 'villages_member', (array) $user->roles ) )
 	{
-		$villages_match = 'Villages';
+		$location = 'Villages';
+	}
+	elseif ( in_array( 'baltimore_member', (array) $user->roles ) )
+	{
+		$location = "Baltimore";
+	}
+	else {
+		$location = 'none';
 	}
 
+	return $location;
 
-	echo 'Member Locations: ';
-			print_r($found_user_roles);
-	echo '<br/>';
 }
-add_action( 'filter_post_location', 'egw_member_location' );
 
 
 /**
  *  Filters posts based on post location and user location
  * @return array $args
  */
-function filter_posts_by_village_location()
+function filter_posts_by_village_location_query()
 {
-	//add post weight
-	if ( in_array($member_location_role, egw_posts_location()))
-	{
-		$post = get_post();
-		add_post_meta( $post->ID, 'post_weight', 10);
-	}
 
-		$args = array(
-			'order' => 'DESC',
+	$location = get_egw_member_location();
 
-		);
+	$argsx = array (
+		'post_status' => 'publish',
+		'order'       => 'DESC',
+		'tag'         => 'Baltimore',
 
-		return $args;
-	}
+	);
 
-add_action( 'filter_post_location', 'filter_posts_by_village_location' );
+	$argsy = array (
+		'post_status' => 'publish',
+		'order'       => 'DESC',
+		'tax_query'   => array(
+			'relation' => 'AND',
+			array(
+			 	'tag' => $location
+			 ),
+			 array(
+				'taxonomy' => 'post_tag',
+				'field'    => 'name',
+				'terms'    => get_egw_branches(),
+				'operator' => 'NOT IN'
+			),
+		),
+	);
+
+	// $my_queryx = query_posts( $argsx );
+	// echo 'Query 1: <br/>';
+	// var_dump($my_queryx);
+	// echo '<br/>';
+	// echo '<br/>Query 2: <br/>';
+	// $my_queryy = query_posts( $argsy );
+	// echo '<br/>';
+	// var_dump($my_queryy);
+
+	return $args = $argsy;
+
+}

@@ -19,7 +19,15 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<?php if ( have_posts() ) : ?>
+		<?php 
+
+		$args = filter_posts_by_village_location_query(); 	
+		$my_query = new WP_Query($args); 
+
+		?>
+		
+		<?php if ( $my_query->have_posts() ) : ?>
+
 
 			<?php if ( is_home() && ! is_front_page() ) : ?>
 				<header>
@@ -28,8 +36,11 @@ get_header(); ?>
 			<?php endif; ?>
 
 			<?php
+
+
+
 			// Start the loop.
-			while ( have_posts() ) : the_post();
+			while ( $my_query->have_posts() ) : $my_query->the_post();
 
 				/*
 				 * Include the Post-Format-specific template for the content.
@@ -43,9 +54,7 @@ get_header(); ?>
 				// $has_branch_tag = has_tag( $branches );
 				// $has_user_role  = array();
 				// echo $has_branch_tag . '<br/>';
-
-				do_action( 'filter_post_location' );
-
+				// 
 		
 				
 				get_template_part( 'template-parts/content', get_post_format() );
