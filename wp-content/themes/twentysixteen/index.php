@@ -36,6 +36,18 @@ get_header(); ?>
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
+				
+				//Find Branch Tag in Post
+				//THIS RETURNS 1 IF BRANCH IS FOUND.
+				// $branches       = array( 'Villages', 'Baltimore' );
+				// $has_branch_tag = has_tag( $branches );
+				// $has_user_role  = array();
+				// echo $has_branch_tag . '<br/>';
+
+				do_action( 'filter_post_location' );
+
+		
+				
 				get_template_part( 'template-parts/content', get_post_format() );
 
 			// End the loop.

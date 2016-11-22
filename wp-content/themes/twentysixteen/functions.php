@@ -419,3 +419,97 @@ function twentysixteen_widget_tag_cloud_args( $args ) {
 	return $args;
 }
 add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
+
+/**
+ * Find the location tagged in a Post.
+ * @return string Village/s Location
+ */
+
+/**
+ * Add EGW Branches Here
+ * @return array EGW Branches
+ */
+function get_egw_branches()
+{
+	$branches = array( 'Villages', 'Baltimore', 'Phoenix' );
+	return $branches;
+}
+
+/**
+ * Returns tagged location
+ * @return array $results;
+ */
+function egw_posts_location()
+{
+	$branches = get_egw_branches();
+	$post_tags = get_the_tags();
+	$found_tags = array();
+
+	// Find tags in a post
+	if ( $post_tags ) {
+		foreach( $post_tags as $tag ) {
+			 $found_tags[] = $tag->name; 
+		}
+	}
+	
+	// Referance tags against branches list
+	$results = array_intersect($branches, $found_tags);
+	echo 'Post Location: ';
+	print_r($results);
+	echo '<br/>';
+	return $results;
+}
+
+/**
+ * Change Member Role To Match Tagged Location.
+ * @return string Village/s location
+ */
+function egw_member_location()
+{
+	$user_caps = array ( 'villages_member' );
+	$user_id = get_current_user_id();
+	$member_data = get_userdata($user_id);
+	$member_caps = $member_data->caps;
+	$found_user_roles = array();
+
+	foreach ($member_caps as $key => $caps) {
+		$found_user_roles[] = $key;
+	}
+
+	$villages_match = array_search('villages_member', $found_user_roles);
+
+	if ( $villages_match )
+	{
+		$villages_match = 'Villages';
+	}
+
+
+	echo 'Member Locations: ';
+			print_r($found_user_roles);
+	echo '<br/>';
+}
+add_action( 'filter_post_location', 'egw_member_location' );
+
+
+/**
+ *  Filters posts based on post location and user location
+ * @return array $args
+ */
+function filter_posts_by_village_location()
+{
+	//add post weight
+	if ( in_array($member_location_role, egw_posts_location()))
+	{
+		$post = get_post();
+		add_post_meta( $post->ID, 'post_weight', 10);
+	}
+
+		$args = array(
+			'order' => 'DESC',
+
+		);
+
+		return $args;
+	}
+
+add_action( 'filter_post_location', 'filter_posts_by_village_location' );
