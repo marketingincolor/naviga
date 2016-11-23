@@ -21,12 +21,73 @@ get_header(); ?>
 
 		<?php 
 
-		$args = filter_posts_by_village_location_query(); 	
-		$my_query = new WP_Query($args); 
+			$location = get_egw_member_location();
+
+			$a = array (
+				'post_status' => 'publish',
+				'order'       => 'DESC',
+				'tag'         => $location,
+
+			);
+
+			
+			$b = array(
+				
+				//Type & Status Parameters
+				'post_type'      => 'post',
+				'post_status'    => 'publish',
+				
+				//Order & Orderby Parameters
+				'order'          => 'DESC',
+				'orderby'        => 'date',
+				
+				//Taxonomy Parameters
+				'tax_query' => array(
+				'relation'  => 'AND',
+					array(
+						'taxonomy'         => 'post_tag',
+						'field'            => 'name',
+						'terms'            =>  get_egw_branches(),
+						'operator'         => 'NOT IN'
+					),
+				),
+				
+			);
+		
+		
+		
+		// $args = filter_posts_by_village_location_query();
+		$a = new WP_Query($a); 	
+		echo '<pre><h3>Query A</h3>';
+		print_r($a->posts);
+		echo '</pre>';
+		
+		$b = new WP_Query($b);
+		echo '<pre><h3>Query B</h3>';
+		print_r($b->posts);
+		echo '</pre>';
+
+		
+		// $my_query = new WP_Query();
+		// $my_query->posts =  array_merge( $a->posts, $b->posts ); 
+
+		echo '<pre><h3>Final Query</h3>';
+		// print_r($my_query);
+		echo '</pre>';
 
 		?>
+
+		<?php 
+
+			// foreach($my_query->posts as $post) : 
+  	// 		setup_postdata( $post ); 
+  	// 		get_template_part( 'template-parts/content', get_post_format() ); 
+
+  	// 		endforeach; 
+  		?>
 		
-		<?php if ( $my_query->have_posts() ) : ?>
+		
+		<?php if ( have_posts() ) : ?>
 
 
 			<?php if ( is_home() && ! is_front_page() ) : ?>
@@ -40,7 +101,7 @@ get_header(); ?>
 
 
 			// Start the loop.
-			while ( $my_query->have_posts() ) : $my_query->the_post();
+			while ( have_posts() ) : the_post(); 
 
 				/*
 				 * Include the Post-Format-specific template for the content.
@@ -48,14 +109,7 @@ get_header(); ?>
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
 				
-				//Find Branch Tag in Post
-				//THIS RETURNS 1 IF BRANCH IS FOUND.
-				// $branches       = array( 'Villages', 'Baltimore' );
-				// $has_branch_tag = has_tag( $branches );
-				// $has_user_role  = array();
-				// echo $has_branch_tag . '<br/>';
-				// 
-		
+	
 				
 				get_template_part( 'template-parts/content', get_post_format() );
 

@@ -496,7 +496,7 @@ function filter_posts_by_village_location_query()
 	$argsx = array (
 		'post_status' => 'publish',
 		'order'       => 'DESC',
-		'tag'         => 'Baltimore',
+		'tag'         => get_egw_branches(),
 
 	);
 
@@ -529,3 +529,36 @@ function filter_posts_by_village_location_query()
 	return $args = $argsy;
 
 }
+
+function my_modify_main_query( $query ) {
+	$member_location = get_egw_member_location();
+
+	if ( $query->is_main_query() ) { 
+		// $query->query_vars['tag'] = $member_location;
+		#var_dump($query);
+	}
+}
+// Hook my above function to the pre_get_posts action
+// add_action( 'pre_get_posts', 'my_modify_main_query' );
+
+function all_posts( $query ) {
+
+	$member_location = get_egw_member_location();
+	$tags = get_tags(get_egw_branches());
+
+	if( $member_location == 'Villages' )
+	{
+		$tag_array = array(3,4);
+	}
+	elseif( $member_location == 'Baltimore' )
+	{
+		$tag_array = array(2,4);
+	}
+
+	if ( $query->is_main_query() && !is_network_admin() ) 
+	{ 
+		//$query->query_vars['tag'] = $member_location;
+		$query->set('tag__not_in', $tag_array);
+	}
+}
+add_action( 'pre_get_posts', 'all_posts' );
